@@ -5,7 +5,8 @@
   "description": "",
   "main": "server/server.js",
   "dependencies": {
-    "gh-pages": "^3.2.3"
+    "gh-pages": "^3.2.3",
+    "bcrypt": "^5.0.0"
   },
   "scripts": {
     "start": "node server/server.js",
