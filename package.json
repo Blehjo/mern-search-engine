@@ -1,38 +1,38 @@
 {
   "name": "mern-search-engine",
-  "version": "0.1.0",
-  "private": true,
+  "homepage": "https://Blehjo.github.io/mern-search-engine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@emailjs/browser": "^3.4.0",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
+    "bootstrap": "^5.1.3",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
+    "react-bootstrap": "^2.2.0",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
-    "web-vitals": "^2.1.4"
+    "scrollmagic": "^2.0.8",
+    "semantic-ui-react": "^2.1.2",
+    "sweetalert2": "^11.4.4",
+    "web-vitals": "^2.1.4",
+    "yarn": "^1.22.17"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "node server/server.js",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "deploy": "gh-pages -d build",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "build": "cd client && npm run build"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.1.0"
   }
 }
