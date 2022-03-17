@@ -28,7 +28,7 @@ export const LOGIN_USER = gql`
       token
       user {
         _id
-        name
+        username
       }
     }
   }
@@ -38,7 +38,7 @@ export const DELETE_BOOK = gql`
   mutation deletebook($savedBook: String!) {
     deletebook(skill: $savedBook) {
       _id
-      name
+      username
       savedBook
     }
   }
