@@ -16,20 +16,20 @@ const resolvers = {
       return { token, user };
     },
     login: async (parent, { email, password }) => {
-        const profile = await User.findOne({ email });
+        const user = await User.findOne({ email });
   
-        if (!profile) {
-          throw new AuthenticationError('No profile with this email found!');
+        if (!user) {
+          throw new AuthenticationError('No user with this email found!');
         }
   
-        const correctPw = await profile.isCorrectPassword(password);
+        const correctPw = await user.isCorrectPassword(password);
   
         if (!correctPw) {
           throw new AuthenticationError('Incorrect password!');
         }
   
-        const token = signToken(profile);
-        return { token, profile };
+        const token = signToken(user);
+        return { token, user };
     },
     saveBook: async (parent, { savedBook }, context) => {
         // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
